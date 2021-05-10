@@ -1,0 +1,60 @@
+let menu = [
+	{
+		name: "Pizza",
+		price: 98
+	},
+	{
+		name: "Pasta",
+		price: 54
+	}
+]
+
+let menu = {
+    pizza:{ name:"pizza", price:20},
+    pasta:{price:56}
+}
+
+Object.keys(menu) //["pizza","pasta"]
+
+menu[req.body.dish_name]
+
+let tables = [
+	{
+		id:0,
+		total:0
+		orders:[
+			{
+				count:2,
+				notes:"Extra cheese with olives",
+				dish: menu[0],
+				waiter: waiters[3]
+			}		
+		]
+	}
+]
+
+
+let waiters = [
+	{id: 0, name:"", username:"", password:""}
+]
+
+
+GET /tables = get all tables
+
+GET /menu = get the menu
+
+GET /orders/:table_id = get all orders for table
+
+POST /orders/:table_id = place on oreder body={waiter, count, notes, dish_name}
+
+DELETE /payment/:table_id
+
+
+// waiters
+
+POST /login body={username,password}
+
+POST /register body={name,username,password}
+
+
+

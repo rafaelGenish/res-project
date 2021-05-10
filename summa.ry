@@ -1,0 +1,53 @@
+NPM:
+express
+- express() = return server object
+- express.json() = return middlewere to convert req.body
+- express.Router() = return middlewere to redirect request to another file
+app/router ==>
+- get, post, put, delete etc = params: path, request handler (req,res)
+- use = params: path?, middlewere - with path -> only on requests that started with this path, without path --> on every request
+
+- app.listen = start the server on the port it get as parameter
+
+UUID ==> v4 = generate random ids
+
+jsonwebtoken (jwt) ==>
+- sign = return token. params: payload, secert, option?
+- verify = return err/decoded (the original payload). params: token, secert
+
+express-session ==>
+require('express-session') = return middlewere
+{
+    name (default - s.id)
+    secret ("keyboard cat" for exp.)
+    resave:false
+    saveUninitialized:true
+    cookie:{
+        maxAge: 1000*60*60*24*7,
+        httpOnly: true,
+        secure: false
+    }
+}
+|-->create req.session
+
+
+bcryptjs ==>
+---Sync---
+- genSaltSync = return salt (מפתח הצפנה) params: strongest (suggested= 10)
+- hashSync = return hash (סיסמא מופצנת) params: password, salt
+- compereSync = return true/false if the password matchs, params: password, hash
+
+---Async---
+- genSalt ( strongest (suggested= 10), callback(err,salt){
+    -hasn (password, salt callback(err, hash){
+        // do what ever you want with the hash
+    })
+} )
+
+- compere(password,hash, callback(err,result:boolean){
+    clg(result) // true/false
+})
+
+
+dotenv => helps to load variables form .env file into the proccess.env object
+require('dotenv').config()
